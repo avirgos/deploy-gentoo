@@ -1,0 +1,5 @@
+distfiles.tar.bz2 filter=lfs diff=lfs merge=lfs -text
+install-amd64-minimal-20240128T165521Z.iso filter=lfs diff=lfs merge=lfs -text
+packages.tar.bz2 filter=lfs diff=lfs merge=lfs -text
+portage-latest.tar.bz2 filter=lfs diff=lfs merge=lfs -text
+stage3-amd64-openrc-20240121T170320Z.tar.xz filter=lfs diff=lfs merge=lfs -text
