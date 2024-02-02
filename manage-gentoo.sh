@@ -77,13 +77,12 @@ source_dir=\"/home/toto/data\"
 backup_dir=\"/mnt/backup\"
 timestamp=\$(date +%Y%m%d%H%M%S)
 
-# Vérifier si le répertoire source existe
 if [ -d \"\$source_dir\" ]; then
     # Créer une archive tar du répertoire source
     tar -czf \"\$backup_dir/backup_\$timestamp.tar.gz\" -C \"\$source_dir\" .
-    echo \"Sauvegarde effectuée avec succès.\"
+    echo \"Backup successfully completed.\"
 else
-    echo \"Erreur : Le répertoire source n'existe pas.\"
+    echo \"Error : The source directory does not exist.\"
     exit 1
 fi
 " > /etc/cron.d/backup.sh
