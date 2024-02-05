@@ -47,17 +47,6 @@ mount /dev/sda6 /mnt/gentoo/var
 swapon /dev/sda7
 
 ######################################################################
-# fstab
-######################################################################
-mkdir /mnt/gentoo/etc
-touch /mnt/gentoo/etc/fstab
-echo "/dev/sda1      /boot       ext2    noauto,noatime       0 2" >> /mnt/gentoo/etc/fstab
-echo "/dev/sda2      /           ext3    noatime              0 1" >> /mnt/gentoo/etc/fstab
-echo "/dev/sda5      /home       ext3    noatime              0 2" >> /mnt/gentoo/etc/fstab
-echo "/dev/sda6      /var        ext3    noatime              0 2" >> /mnt/gentoo/etc/fstab
-echo "/dev/sda7      none        swap    sw                   0 0" >> /mnt/gentoo/etc/fstab
-
-######################################################################
 # Paquets
 ######################################################################
 ##########
@@ -142,6 +131,15 @@ echo 'TIMEZONE="Europe/Paris"' > /etc/conf.d/clock
 # Clavier
 ######################################################################
 sed -i 's/keymap="us"/keymap="fr"/' /etc/conf.d/keymaps
+
+######################################################################
+# fstab
+######################################################################
+echo "/dev/sda1      /boot       ext2    noauto,noatime       0 2" >> /etc/fstab
+echo "/dev/sda2      /           ext3    noatime              0 1" >> /etc/fstab
+echo "/dev/sda5      /home       ext3    noatime              0 2" >> /etc/fstab
+echo "/dev/sda6      /var        ext3    noatime              0 2" >> /etc/fstab
+echo "/dev/sda7      none        swap    sw                   0 0" >> /etc/fstab
 
 exit
 
